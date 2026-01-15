@@ -22,3 +22,6 @@ var search = function (nums, target) {
     return -1;
 
 };
+
+// time complexity O(log n)
+// space complexity O(1) constant 
