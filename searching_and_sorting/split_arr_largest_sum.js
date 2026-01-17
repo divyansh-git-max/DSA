@@ -39,3 +39,5 @@ function splitArray(arr, k) {
 }
 
 console.log(splitArray(arr, k));
+//O(Nlog(Sum(Nums)−Max(Nums))) --> time complexity
+//O(1) --> space complexity
