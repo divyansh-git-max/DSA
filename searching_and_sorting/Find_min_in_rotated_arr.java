@@ -1,7 +1,6 @@
 package searching_and_sorting;
 
 public class Find_min_in_rotated_arr {
-    
 
     int min = Integer.MAX_VALUE;
     public int findMin(int[] nums) {
