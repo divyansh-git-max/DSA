@@ -35,3 +35,6 @@ class Solution(object):
             else:
                 low=mid+1
         return low
+
+# time complexity O(Nlog(Max(Bloomday)−Min(Bloomday)))
+# space complexity O(1)
