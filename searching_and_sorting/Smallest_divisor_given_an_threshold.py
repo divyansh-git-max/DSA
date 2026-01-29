@@ -24,3 +24,6 @@ class Solution(object):
             else:
                 low=mid+1
         return ans
+    
+# time complexity O(Nlog(Max(Nums)−Min(Nums)))
+# space complexity O(1)
