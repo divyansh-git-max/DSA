@@ -24,10 +24,31 @@ public class LL_cycle{
         return head;
     
     }
+    private static int lengthOfLL(Node head){
+        int count = 0;
+        Node temp = head;
+        while(temp!=null){
+            count++;
+            temp = temp.next;
+        }
+        return count;
+    }
+    private static boolean checkIfPresent(Node head, int val){
+        Node temp = head;
+        while(temp!=null){
+            if(temp.data == val){
+                return true;
+            }
+            temp = temp.next;
+        }
+        return false;
+    }
 
     public static void main(String[] args) {
         int[] arr = {1,2,3,4,5};
-        Node y = new Node(arr[3]);
+        Node y = convertArr2LL(arr);
         System.out.println(y.data);
+        System.out.println(lengthOfLL(y));
+        System.out.println(checkIfPresent(y,10));
     }
 }

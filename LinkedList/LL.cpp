@@ -31,13 +31,35 @@ Node* convertArr2LL(vector<int> &arr){
     }
     return head;
 }
+int length(Node* head){
+    int count = 0;
+    Node* temp = head;
+    while(temp){
+        cout<<temp->data<<" ";
+        temp=temp->next;
+        count++;
+    }
+    return count;
+}
 
+int check(Node* head, int val){
+    Node* temp = head;
+    while(temp){
+        if(temp->data == val){
+            return 1;
+        }
+        temp = temp->next;
+    }
+    return 0;
+}
 int main(){
     vector<int> arr = {1,2,3,4,5};
-    Node* y = convertArr2LL(arr);
-    Node* temp = y;
+    Node* head = convertArr2LL(arr);
+    Node* temp = head;
     while(temp != nullptr){
         cout<<temp -> data<<" ";
         temp = temp -> next;
+ 
     }
+    cout<<length(head);
 }
