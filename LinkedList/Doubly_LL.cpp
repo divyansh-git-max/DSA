@@ -98,12 +98,105 @@ Node* deleteK(Node* head, int k){
 
     prev->next = front;
     front->prev = prev;
+
+
+    temp->next = NULL;
+    temp->prev = NULL;
+
+
     delete temp;
     return head;
 
 }
 
+// delete the node from the doubly LL and node is not head
+void deleteNode(Node* temp){
+    Node* prev = temp->prev;
+    Node* front = temp->next;
 
+    if(front == NULL){
+        prev->next = NULL;
+        temp->prev = NULL;
+        free(temp);
+        return;
+    }
+    prev->next=front;
+    front->prev=prev;
+    temp->next=temp->prev=NULL;
+    delete temp;
+    return;
+
+}
+
+// insertion of before head
+Node* insertBeforehead(Node* head, int val){
+    Node* newHead = new Node(val, head, NULL);
+    head->prev = newHead;
+    return newHead;
+}
+
+// insertion after the head
+Node* insertAfterHead(Node* head, int val){
+    Node* newNode = new Node(val, head->next, head);
+    head->next->prev = newNode;
+    head->next = newNode;
+    return head;
+
+}   
+
+// insertion before the tail
+Node* insertBeforeTail(Node* head, int val){
+    Node* tail = head;
+    while (tail->next != NULL){
+        tail=tail->next;
+    }
+    
+    Node* newNode = new Node(val, tail, tail->prev);
+    tail->prev->next = newNode;
+    tail->prev = newNode;
+    return head;
+}
+
+// insertion after the tail
+Node* insertAferTail(Node* head, int val){
+    Node* tail = head;
+    while(tail->next!= NULL){
+        tail=tail->next;
+    }
+
+    Node* newNode = new Node(val, NULL, tail);
+    tail->next = newNode;
+    return head;
+}   
+
+// inserting before the kth node of the LL
+Node* insertBeforeValue(Node* head, int val, int el){
+    if(el==1){
+        return insertBeforehead(head, val);
+    }
+    Node* temp=head;
+    int count = 0;
+    while(temp!=NULL){
+        count++;
+        if(count==el){
+            break;
+        }
+        temp=temp->next;
+    }
+    Node* newNode = new Node(val, temp, temp->prev);
+    temp->prev->next = newNode;
+    temp->prev = newNode;
+    return head;
+
+}
+
+// insertion before the given Node(not equal Head)
+void insertBeforeNode(Node* node, int val){
+    Node* prevNode = node->prev;
+    Node* newNode = new Node(val, node, prevNode);
+    prevNode->next = newNode;
+    node->prev = newNode;
+}
 
 void print(Node* head){
     while(head!=NULL){
@@ -120,6 +213,9 @@ void print(Node* head){
     cout<<endl;
 }
 
+
+
+
 int main(){
     vector<int> arr = {12,5,8,7};
     Node* head = convertArr2DLL(arr);
@@ -128,7 +224,25 @@ int main(){
     print(head);
     // head = removetail(head);
     // print(head);
-    head = deleteK(head, 3);
+    // head = deleteK(head, 3);
+    
+    // deleteNode(head->next->next->next);
+    cout<<"insertion before head"<<endl;
+    head = insertBeforehead(head, 10);
     print(head);
+    cout<<"insertion after head"<<endl;
+    head = insertAfterHead(head, 20);
+    print(head);
+    cout<<"insertion before tail"<<endl;
+    head = insertBeforeTail(head, 100);
+    print(head);
+    cout<<"insertion after tail"<<endl;
+    head = insertAferTail(head, 200);
+    print(head);
+
+    cout<<"insertion before kth node"<<endl;
+    head = insertBeforeValue(head, 300, 3);
+    print(head);
+
 return 0;
 }
