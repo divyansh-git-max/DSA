@@ -1,3 +1,4 @@
+// Detect cycle using Floyd's Tortoise and Hare algorithm
 // optimized approachs of floyd algorithm
 
 function hasCycle(head) {

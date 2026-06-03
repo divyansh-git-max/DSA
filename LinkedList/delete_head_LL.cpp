@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+// Small: utilities for deleting nodes in a singly linked list (remove head/tail/k-th)
 using namespace std;
 
 class Node

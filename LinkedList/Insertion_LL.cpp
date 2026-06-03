@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+// Singly linked list insertion utilities: head/tail/position/value
 using namespace std;
 
 class Node

@@ -1,3 +1,4 @@
+# MyLinkedList: singly linked list class with get/add/delete methods
 class Node:
     def __init__(self,val):
         self.val=val

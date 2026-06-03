@@ -1,3 +1,4 @@
+// MyLinkedList: singly linked list class with get/add/delete methods
 function Node(val) {
     this.val = val;
     this.next = null;

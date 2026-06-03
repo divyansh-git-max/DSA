@@ -1,3 +1,4 @@
+// Linked list utilities: construct, length, contains
 import java.util.*;
 class Node{
     int data;

@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+// Doubly linked list: insertions and deletions (head/tail/k-th)
 using namespace std;
 
 class Node{

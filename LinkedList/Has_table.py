@@ -1,3 +1,4 @@
+# Detect cycle in linked list using a set
 class Solution(object):
     def hasCycle(self, head):
         """

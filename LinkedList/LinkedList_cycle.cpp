@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+// Simple linked list construction example and node access
 
 using namespace std;
 class Node

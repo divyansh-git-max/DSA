@@ -1,3 +1,4 @@
+// Detect cycle in linked list using a hash/set
 var hasCycle = function (head) {
     let curr = head;
     let seenN = new Set();
